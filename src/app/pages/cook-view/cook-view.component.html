@@ -1,0 +1,51 @@
+<div class="container">
+  <div class="columns">
+    <div class="column yellow-background">
+      <h2>Veggie</h2>
+      <mat-card onselectstart="return false" [ngClass]="{'status-color-idle': mealCard.status == MealStatus.IDLE,
+                                   'status-color-in-preparation' : mealCard.status === MealStatus.IN_PREPARATION,
+                                   'status-color-ready-to-fetch' : mealCard.status === MealStatus.READY_TO_FETCH,
+                                   'status-color-done' : mealCard.status === MealStatus.DONE}"
+                (click)="onMealCardClick(mealCard)"
+                *ngFor="let mealCard of getCardsByColorSorted(MealColor.YELLOW)"
+      >{{ mealCard.name }}
+      </mat-card>
+    </div>
+    <div class="separator"></div>
+    <div class="column red-background">
+      <h2>Chicken</h2>
+      <mat-card onselectstart="return false" [ngClass]="{'status-color-idle': mealCard.status == MealStatus.IDLE,
+                                   'status-color-in-preparation' : mealCard.status === MealStatus.IN_PREPARATION,
+                                   'status-color-ready-to-fetch' : mealCard.status === MealStatus.READY_TO_FETCH,
+                                   'status-color-done' : mealCard.status === MealStatus.DONE}"
+                (click)="onMealCardClick(mealCard)"
+                *ngFor="let mealCard of getCardsByColorSorted(MealColor.RED)"
+      >{{ mealCard.name }}
+      </mat-card>
+    </div>
+    <div class="separator"></div>
+    <div class="column blue-background">
+      <h2>Classic Beef</h2>
+      <mat-card onselectstart="return false" [ngClass]="{'status-color-idle': mealCard.status == MealStatus.IDLE,
+                                   'status-color-in-preparation' : mealCard.status === MealStatus.IN_PREPARATION,
+                                   'status-color-ready-to-fetch' : mealCard.status === MealStatus.READY_TO_FETCH,
+                                   'status-color-done' : mealCard.status === MealStatus.DONE}"
+                (click)="onMealCardClick(mealCard)"
+                *ngFor="let mealCard of getCardsByColorSorted(MealColor.BLUE)"
+      >{{ mealCard.name }}
+      </mat-card>
+    </div>
+    <div class="separator"></div>
+    <div class="column green-background">
+      <h2>Pommes</h2>
+      <mat-card onselectstart="return false" [ngClass]="{'status-color-idle': mealCard.status == MealStatus.IDLE,
+                                   'status-color-in-preparation' : mealCard.status === MealStatus.IN_PREPARATION,
+                                   'status-color-ready-to-fetch' : mealCard.status === MealStatus.READY_TO_FETCH,
+                                   'status-color-done' : mealCard.status === MealStatus.DONE}"
+                (click)="onMealCardClick(mealCard)"
+                *ngFor="let mealCard of getCardsByColorSorted(MealColor.GREEN)"
+      >{{ mealCard.name }}
+      </mat-card>
+    </div>
+  </div>
+</div>

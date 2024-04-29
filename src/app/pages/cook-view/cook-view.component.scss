@@ -1,0 +1,70 @@
+mat-card {
+  background: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  font-weight: 500;
+  color: rgba(0, 0, 0, 0.87);
+  cursor: pointer;
+  width: 100%;
+  height: 30px;
+}
+
+.status-color-idle {
+  background-color: #ffffff;
+}
+
+.status-color-in-preparation {
+  background-color: #ffeb3b;
+}
+
+.status-color-ready-to-fetch {
+  background-color: #ff9800;
+}
+
+.status-color-done {
+  background-color: #4caf50;
+}
+
+.red-background {
+  background-color: #f59494;
+}
+
+.green-background {
+  background-color: #b7fca2;
+}
+
+.yellow-background {
+  background-color: #ffdf91;
+}
+
+.blue-background {
+  background-color: #8d94f8;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100vw;
+}
+
+.columns {
+  display: flex;
+  flex: 1;
+  width: 100vw;
+  height: 100vh;
+}
+
+.column {
+  flex: 1;
+  display: flex;
+  gap: 10px;
+  justify-content: flex-start;
+  align-items: center;
+  border: 1px solid #ccc;
+  flex-direction: column;
+}

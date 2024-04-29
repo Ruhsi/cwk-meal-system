@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {DataService} from './core/shared/data.service';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'cwk-meal-system';
+
+  title: string = 'cwk-meal-system';
+
+  constructor(private dataService: DataService) {
+    this.dataService.createData();
+  }
 }

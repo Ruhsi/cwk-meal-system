@@ -1,0 +1,6 @@
+export enum MealStatus {
+  IN_PREPARATION = 'IN_ZUBEREITUNG',
+  READY_TO_FETCH = 'ABHOLBEREIT',
+  IDLE = 'VERFÜGBAR',
+  DONE = 'ABGEHOLT'
+}
