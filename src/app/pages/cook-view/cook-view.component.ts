@@ -19,8 +19,7 @@ export class CookViewComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.mealCardData = this.dataService.getData()
-      .sort((a, b) => this.sortOrder.indexOf(a.status) - this.sortOrder.indexOf(b.status));
+    this.fetchAndSortData();
   }
 
   onMealCardClick(mealCard: MealCard) {
@@ -49,7 +48,20 @@ export class CookViewComponent implements OnInit {
     return mealCards;
   }
 
+  resetValues(value: number, color: MealColor) {
+    if(value >= 0) {
+      this.dataService.resetValues(value, color);
+      this.fetchAndSortData();
+    }
+  }
+
+  private fetchAndSortData() {
+    this.mealCardData = this.dataService.getData()
+      .sort((a, b) => this.sortOrder.indexOf(a.status) - this.sortOrder.indexOf(b.status));
+  }
+
   protected readonly MealStatus = MealStatus;
   protected readonly MealColor = MealColor;
   protected readonly Object = Object;
+  protected readonly Number = Number;
 }

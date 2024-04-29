@@ -9,8 +9,6 @@ import {MealColor} from '../model/MealColor';
 })
 export class DataService {
 
-  private _data: BehaviorSubject<Array<MealCard>> = new BehaviorSubject<Array<MealCard>>(new Array<MealCard>);
-
   public setData(data: Array<MealCard>):void {
     localStorage.setItem('data', JSON.stringify(data));
   }
@@ -70,6 +68,17 @@ export class DataService {
     this.setData(mealCards);
   }
 
+  public resetValues(value: number, color: MealColor) {
+    let mealCards = this.getData();
+    mealCards = mealCards.map(mealCard => {
+      if(mealCard.color === color && mealCard.name >= value){
+        mealCard.status = MealStatus.IDLE;
+      }
+      return mealCard;
+    });
+    this.setData(mealCards.sort((a, b) => a.name - b.name));
+  }
+
   private createBlueMealCard(from: number, to: number): Array<MealCard> {
     const mealCards = new Array<MealCard>();
     for (let i = from; i <= to; i++){
@@ -107,6 +116,6 @@ export class DataService {
   }
 
   private createMealCard(name: number, color: MealColor): MealCard {
-    return new MealCard(name.toString(), MealStatus.IDLE, color);
+    return new MealCard(name, MealStatus.IDLE, color);
   }
 }

@@ -1,7 +1,16 @@
 <div class="container">
   <div class="columns">
     <div class="column yellow-background">
-      <h2>Veggie</h2>
+      <div>
+        <mat-form-field class="form-field" appearance="outline" floatLabel="always">
+          <mat-label>Startwert</mat-label>
+          <input #yellowResetInput matInput type="number" class="example-right-align" placeholder="0">
+        </mat-form-field>
+          <button mat-fab color="primary" aria-label="zurücksetzen" (click)="resetValues(Number(yellowResetInput.value), MealColor.YELLOW)">
+            <mat-icon>restart_alt</mat-icon>
+          </button>
+      </div>
+      <h2>Cheeseburger</h2>
       <mat-card onselectstart="return false" [ngClass]="{'status-color-idle': mealCard.status == MealStatus.IDLE,
                                    'status-color-in-preparation' : mealCard.status === MealStatus.IN_PREPARATION,
                                    'status-color-ready-to-fetch' : mealCard.status === MealStatus.READY_TO_FETCH,
@@ -13,7 +22,18 @@
     </div>
     <div class="separator"></div>
     <div class="column red-background">
-      <h2>Chicken</h2>
+      <div>
+        <div>
+          <mat-form-field class="form-field" appearance="outline" floatLabel="always">
+            <mat-label>Startwert</mat-label>
+            <input #redResetInput matInput type="number" class="example-right-align" placeholder="0">
+          </mat-form-field>
+          <button mat-fab color="primary" aria-label="zurücksetzen" (click)="resetValues(Number(redResetInput.value), MealColor.RED)">
+            <mat-icon>restart_alt</mat-icon>
+          </button>
+        </div>
+      </div>
+      <h2>Saugeil-Burger</h2>
       <mat-card onselectstart="return false" [ngClass]="{'status-color-idle': mealCard.status == MealStatus.IDLE,
                                    'status-color-in-preparation' : mealCard.status === MealStatus.IN_PREPARATION,
                                    'status-color-ready-to-fetch' : mealCard.status === MealStatus.READY_TO_FETCH,
@@ -25,7 +45,16 @@
     </div>
     <div class="separator"></div>
     <div class="column blue-background">
-      <h2>Classic Beef</h2>
+      <div>
+        <mat-form-field class="form-field" appearance="outline" floatLabel="always">
+          <mat-label>Startwert</mat-label>
+          <input #blueResetInput matInput type="number" class="example-right-align" placeholder="0">
+        </mat-form-field>
+        <button mat-fab color="primary" aria-label="zurücksetzen" (click)="resetValues(Number(blueResetInput.value), MealColor.BLUE)">
+          <mat-icon>restart_alt</mat-icon>
+        </button>
+      </div>
+      <h2>Urlaub im Grünen Burger</h2>
       <mat-card onselectstart="return false" [ngClass]="{'status-color-idle': mealCard.status == MealStatus.IDLE,
                                    'status-color-in-preparation' : mealCard.status === MealStatus.IN_PREPARATION,
                                    'status-color-ready-to-fetch' : mealCard.status === MealStatus.READY_TO_FETCH,
@@ -37,6 +66,15 @@
     </div>
     <div class="separator"></div>
     <div class="column green-background">
+      <div>
+        <mat-form-field class="form-field" appearance="outline" floatLabel="always">
+          <mat-label>Startwert</mat-label>
+          <input #greenResetInput matInput type="number" class="example-right-align" placeholder="0">
+        </mat-form-field>
+        <button mat-fab color="primary" aria-label="zurücksetzen" (click)="resetValues(Number(greenResetInput.value), MealColor.GREEN)">
+          <mat-icon>restart_alt</mat-icon>
+        </button>
+      </div>
       <h2>Pommes</h2>
       <mat-card onselectstart="return false" [ngClass]="{'status-color-idle': mealCard.status == MealStatus.IDLE,
                                    'status-color-in-preparation' : mealCard.status === MealStatus.IN_PREPARATION,
