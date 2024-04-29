@@ -10,6 +10,7 @@ import {MealColor} from '../model/MealColor';
 export class DataService {
 
   public setData(data: Array<MealCard>):void {
+    localStorage.removeItem('data');
     localStorage.setItem('data', JSON.stringify(data));
   }
 

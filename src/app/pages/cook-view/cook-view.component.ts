@@ -39,7 +39,6 @@ export class CookViewComponent implements OnInit {
 
   getCardsByColorSorted(color: MealColor) {
     let mealCards = this.mealCardData.filter(mealCard => mealCard.color == color)
-    console.log('mealcards', mealCards)
     mealCards.sort((a, b) => this.sortOrder.indexOf(a.status) - this.sortOrder.indexOf(b.status));
     let inPreparation = mealCards.filter(mealCard => mealCard.status == MealStatus.IN_PREPARATION);
     let readyToFetch = mealCards.filter(mealCard => mealCard.status == MealStatus.READY_TO_FETCH);
