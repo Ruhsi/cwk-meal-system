@@ -14,7 +14,7 @@ $blue: #229;
   align-items: flex-start;
   justify-content: center;
   padding: 20px;
-  background-color: #e0e0e0;
+  background-color: #e4e4e4;
 }
 
 .menu-container > div {
@@ -30,7 +30,7 @@ $blue: #229;
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  background-color: #f0f0f0;
+  background-color: #ffffff;
 }
 
 .responsive-img {
@@ -69,7 +69,7 @@ h2 {
     bottom:-5px;
     width:100%;
     height:5px;
-    background: #fff;
+    background: #e0e0e0;
     box-shadow: 0 10px 6px rgba(0,0,0,0.2);
     -webkit-clip-path: polygon(0% 0%, 5%  70%, 10% 0%, 15%  100%, 20% 0%, 25% 45%, 30% 0%, 35%  100%, 40% 0%, 45%  60%, 50% 0%, 55%  100%, 60% 0%, 65%  100%, 70% 0%, 75%  100%, 80% 0%, 85%  100%, 90% 0%, 95%  50%, 100% 0%);
     clip-path: polygon(0% 0%, 5%  70%, 10% 0%, 15%  100%, 20% 0%, 25% 45%, 30% 0%, 35%  100%, 40% 0%, 45%  60%, 50% 0%, 55%  100%, 60% 0%, 65%  100%, 70% 0%, 75%  100%, 80% 0%, 85%  100%, 90% 0%, 95%  50%, 100% 0%);
@@ -115,4 +115,10 @@ li {
   border-left: 1px solid black;
   border-color: lightgray;
   height: 100%;
+}
+
+.video {
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
 }

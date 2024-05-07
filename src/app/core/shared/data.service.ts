@@ -74,6 +74,8 @@ export class DataService {
     mealCards = mealCards.map(mealCard => {
       if(mealCard.color === color && mealCard.name >= value){
         mealCard.status = MealStatus.IDLE;
+      } else if(mealCard.color === color && mealCard.name < value){
+        mealCard.status = MealStatus.DONE;
       }
       return mealCard;
     });

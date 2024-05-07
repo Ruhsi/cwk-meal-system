@@ -33,7 +33,12 @@ export class CookViewComponent implements OnInit {
       mealCard.status = MealStatus.IDLE;
     }
 
-    this.mealCardData.sort((a, b) => this.sortOrder.indexOf(a.status) - this.sortOrder.indexOf(b.status));
+    this.mealCardData.sort((a, b) => {
+      const diff = this.sortOrder.indexOf(a.status) - this.sortOrder.indexOf(b.status);
+      if(diff) return diff;
+      return a.name - b.name;
+    });
+
     this.dataService.setData(this.mealCardData)
   }
 
@@ -42,8 +47,10 @@ export class CookViewComponent implements OnInit {
     mealCards.sort((a, b) => this.sortOrder.indexOf(a.status) - this.sortOrder.indexOf(b.status));
     let inPreparation = mealCards.filter(mealCard => mealCard.status == MealStatus.IN_PREPARATION);
     let readyToFetch = mealCards.filter(mealCard => mealCard.status == MealStatus.READY_TO_FETCH);
-    let idle = mealCards.filter(mealCard => mealCard.status == MealStatus.IDLE).slice(0, 10);
-    mealCards = inPreparation.concat(readyToFetch, idle);
+    let idle = mealCards.filter(mealCard => mealCard.status == MealStatus.IDLE).slice(0, 7);
+    let done = mealCards.filter(mealCard => mealCard.status == MealStatus.DONE).slice(0, 3);
+    mealCards = inPreparation.concat(readyToFetch, idle, done);
+
     return mealCards;
   }
 
