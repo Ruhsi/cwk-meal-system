@@ -6,7 +6,7 @@
           <mat-label>Startwert</mat-label>
           <input #blueResetInput matInput type="number" class="example-right-align" placeholder="0">
         </mat-form-field>
-          <button mat-fab color="primary" aria-label="zurücksetzen" (click)="resetValues(Number(blueResetInput.value), MealColor.YELLOW)">
+          <button mat-fab color="primary" aria-label="zurücksetzen" (click)="resetValues(Number(blueResetInput.value), MealColor.BLUE)">
             <mat-icon>restart_alt</mat-icon>
           </button>
       </div>
@@ -28,7 +28,7 @@
             <mat-label>Startwert</mat-label>
             <input #greenResetInput matInput type="number" class="example-right-align" placeholder="0">
           </mat-form-field>
-          <button mat-fab color="primary" aria-label="zurücksetzen" (click)="resetValues(Number(greenResetInput.value), MealColor.RED)">
+          <button mat-fab color="primary" aria-label="zurücksetzen" (click)="resetValues(Number(greenResetInput.value), MealColor.GREEN)">
             <mat-icon>restart_alt</mat-icon>
           </button>
         </div>
@@ -50,7 +50,7 @@
           <mat-label>Startwert</mat-label>
           <input #redResetInput matInput type="number" class="example-right-align" placeholder="0">
         </mat-form-field>
-        <button mat-fab color="primary" aria-label="zurücksetzen" (click)="resetValues(Number(redResetInput.value), MealColor.GREEN)">
+        <button mat-fab color="primary" aria-label="zurücksetzen" (click)="resetValues(Number(redResetInput.value), MealColor.RED)">
           <mat-icon>restart_alt</mat-icon>
         </button>
       </div>
